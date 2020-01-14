@@ -115,3 +115,10 @@
   right: 10px;
   background-color: lightgreen;
 }
+
+.smallImg {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  float: right;
+}
