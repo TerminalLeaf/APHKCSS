@@ -21,7 +21,7 @@ function convertEnergyFoo() {
   document.getElementById("energyConverted").innerHTML = energy;
   document.getElementById("hire").style.backgroundColor = "#00FF00";
   setTimeout(function(){document.getElementById("hire").style.backgroundColor = "#00008B";}, 100);
-  if (energy == 10) {
+  if (energy == 50) {
     pollutionStart = true;
   }
   var mainGameLoop=setInterval(function foo(){
@@ -38,7 +38,7 @@ function convertEnergyFoo() {
         document.getElementById("energyConverted").innerHTML = energy;
         document.getElementById("pollutionEarned").innerHTML = pollution;
       }
-      if (energy == 100) {
+      if (energy == 1000) {
         alert("You Win!");
         energy = 0;
         pollution = 0;
@@ -71,39 +71,42 @@ function onKeyDownTwo(evt) {
 
 function lessenEnergy1() {
   if (energy>=1){
+    setTimeout(function(){document.getElementById("cp1").style.backgroundColor = "#00008B";}, 100);
+    document.getElementById("cp1").style.backgroundColor = "#00FF00";
     pollutionPHS=((pollutionPHS*2)*0.7)/2;
     energy=energy-1;
     document.getElementById("energyConverted").innerHTML = energy;
     document.getElementById("pollutionEarned").innerHTML = pollution;
-    document.getElementById("cp1").style.backgroundColor = "#00FF00";
+  } else {
+    document.getElementById("cp1").style.backgroundColor = "#FF0000";
     setTimeout(function(){document.getElementById("cp1").style.backgroundColor = "#00008B";}, 100);
   }
-  document.getElementById("cp1").style.backgroundColor = "#FF0000";
-  setTimeout(function(){document.getElementById("cp1").style.backgroundColor = "#00008B";}, 100);
 }
 
 function lessenEnergy2() {
-  if (energy >=10) {
+  if (energy>=10) {
+    setTimeout(function(){document.getElementById("cp2").style.backgroundColor = "#00008B";}, 100);
+    document.getElementById("cp2").style.backgroundColor = "#00FF00";
     pollutionPHS=((pollutionPHS*2)*0.5)/2;
     energy=energy-10;
     document.getElementById("energyConverted").innerHTML = energy;
     document.getElementById("pollutionEarned").innerHTML = pollution;
-    document.getElementById("cp2").style.backgroundColor = "#00FF00";
+  } else {
+    document.getElementById("cp2").style.backgroundColor = "#FF0000";
     setTimeout(function(){document.getElementById("cp2").style.backgroundColor = "#00008B";}, 100);
   }
-  document.getElementById("cp2").style.backgroundColor = "#FF0000";
-  setTimeout(function(){document.getElementById("cp2").style.backgroundColor = "#00008B";}, 100);
 }
 
 function lessenEnergy3() {
   if (energy >= 100){
+    setTimeout(function(){document.getElementById("cp3").style.backgroundColor = "#00008B";}, 100);
+    document.getElementById("cp3").style.backgroundColor = "#00FF00";
     setTimeout(function foo() {clearInterval(mainGameLoop);}, 10000);
     energy=energy-100;
     document.getElementById("energyConverted").innerHTML = energy;
     document.getElementById("pollutionEarned").innerHTML = pollution;
-    document.getElementById("cp3").style.backgroundColor = "#00FF00";
-    setTimeout(function(){document.getElementById("cp3").style.backgroundColor = "#00008B";}, 1000);
+  } else {
+    document.getElementById("cp3").style.backgroundColor = "#FF0000";
+    setTimeout(function(){document.getElementById("cp3").style.backgroundColor = "#00008B";}, 100);
   }
-  document.getElementById("cp3").style.backgroundColor = "#FF0000";
-  setTimeout(function(){document.getElementById("cp3").style.backgroundColor = "#00008B";}, 100);
 }
