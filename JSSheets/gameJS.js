@@ -1,10 +1,12 @@
 var energy = 0;
+var energyPerClick = 1;
 var pollutionStart = false;
 var pollution = 0;
 var pollutionPHS=0.5;
 var cp1=false;
 var cp2=false;
 var cp3=false;
+var winCount = 0;
 
 //init
 document.getElementById("energyConverted").innerHTML = energy;
@@ -14,10 +16,12 @@ document.getElementById("hire").onclick = convertEnergyFoo;
 document.getElementById("cp1").onclick = lessenEnergy1;
 document.getElementById("cp2").onclick = lessenEnergy2;
 document.getElementById("cp3").onclick = lessenEnergy3;
+document.getElementById("up").onclick = upgrade;
+//document.getElementById("win").style.visibility = "hidden";
 
 //this allows the person to gain energy whenever they click the "hire" button, but when the person reaches 10 energy, pollution starts increasing. Also, when 100 pollution is reached, they lose the game. The game is won when they have 1000 energy.
 function convertEnergyFoo() {
-  energy = energy+1;
+  energy = energy+energyPerClick;
   document.getElementById("energyConverted").innerHTML = energy;
   document.getElementById("hire").style.backgroundColor = "#00FF00";
   setTimeout(function(){document.getElementById("hire").style.backgroundColor = "#00008B";}, 100);
@@ -39,16 +43,23 @@ function convertEnergyFoo() {
         document.getElementById("pollutionEarned").innerHTML = pollution;
       }
       if (energy == 1000) {
-        alert("You Win!");
-        energy = 0;
-        pollution = 0;
-        pollutionStart = false;
-        pollutionPHS=0.5;
-        document.getElementById("energyConverted").innerHTML = energy;
-        document.getElementById("pollutionEarned").innerHTML = pollution;
+        document.getElementById("win").style.visibility = "visible";
+        document.getElementById("win").onclick = winGame;
       }
     }
   }, 1000);
+}
+
+function winGame() {
+  alert("You Win!");
+  energy = 0;
+  pollution = 0;
+  pollutionStart = false;
+  pollutionPHS=0.5;
+  winCount=winCount+1;
+  document.getElementById("energyConverted").innerHTML = energy;
+  document.getElementById("pollutionEarned").innerHTML = pollution;
+  //document.getElementById("wincounter").innerHTML = winCount;
 }
 
 window.addEventListener('keydown', onKeyDownTwo, true);
@@ -65,6 +76,9 @@ function onKeyDownTwo(evt) {
     lessenEnergy2();
   }
   if (x==51) {
+    upgrade();
+  }
+  if (x==52) {
     lessenEnergy3();
   }
 }
@@ -101,12 +115,27 @@ function lessenEnergy3() {
   if (energy >= 100){
     setTimeout(function(){document.getElementById("cp3").style.backgroundColor = "#00008B";}, 100);
     document.getElementById("cp3").style.backgroundColor = "#00FF00";
-    setTimeout(function foo() {clearInterval(mainGameLoop);}, 10000);
+    setTimeout(function foo() {pollution = 0; energy = 0;}, 10000);
+    pollutionStart=true;
     energy=energy-100;
     document.getElementById("energyConverted").innerHTML = energy;
     document.getElementById("pollutionEarned").innerHTML = pollution;
   } else {
     document.getElementById("cp3").style.backgroundColor = "#FF0000";
     setTimeout(function(){document.getElementById("cp3").style.backgroundColor = "#00008B";}, 100);
+  }
+}
+
+function upgrade() {
+  if (energy>=50){
+    setTimeout(function(){document.getElementById("up").style.backgroundColor = "#00008B";}, 100);
+    document.getElementById("up").style.backgroundColor = "#00FF00";
+    energy=energy-50;
+    energyPerClick=energyPerClick+1;
+    document.getElementById("energyConverted").innerHTML = energy;
+    document.getElementById("pollutionEarned").innerHTML = pollution;
+  } else {
+    document.getElementById("up").style.backgroundColor = "#FF0000";
+    setTimeout(function(){document.getElementById("up").style.backgroundColor = "#00008B";}, 100);
   }
 }

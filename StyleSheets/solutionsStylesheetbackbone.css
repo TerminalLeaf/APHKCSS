@@ -46,7 +46,7 @@
 #API {
   box-sizing: content-box;
   width: 215px;
-  height: 800px;
+  height: 700px;
   top: 15px;
   padding: 30px;
   border: 7px solid black;
@@ -106,7 +106,7 @@
 #explanation {
   box-sizing: content-box;
   width: 1025px;
-  height: 153.6px;
+  height: 53.6px;
   top: 10px;
   padding: 30px;
   border: 7px solid black;
@@ -121,4 +121,6 @@
   height: 200px;
   position: relative;
   float: right;
+  padding: 10px;
+  top: -10px;
 }
