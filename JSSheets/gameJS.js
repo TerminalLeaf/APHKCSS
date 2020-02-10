@@ -59,7 +59,8 @@ function winGame() {
   winCount=winCount+1;
   document.getElementById("energyConverted").innerHTML = energy;
   document.getElementById("pollutionEarned").innerHTML = pollution;
-  //document.getElementById("wincounter").innerHTML = winCount;
+  document.getElementById("wincounter").innerHTML = winCount;
+  document.getElementById("win").style.visibility = "hidden";
 }
 
 window.addEventListener('keydown', onKeyDownTwo, true);
