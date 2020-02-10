@@ -24,7 +24,7 @@ function convertEnergyFoo() {
   document.getElementById("energyConverted").innerHTML = energy;
   document.getElementById("hire").style.backgroundColor = "#00FF00";
   setTimeout(function(){document.getElementById("hire").style.backgroundColor = "#00008B";}, 100);
-  if (energy == 50) {
+  if (energy >= 50) {
     pollutionStart = true;
   }
   var mainGameLoop=setInterval(function foo(){
