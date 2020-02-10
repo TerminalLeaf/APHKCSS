@@ -6,7 +6,6 @@ var pollutionPHS=0.5;
 var cp1=false;
 var cp2=false;
 var cp3=false;
-var winCount = 0;
 
 //init
 document.getElementById("energyConverted").innerHTML = energy;
@@ -35,14 +34,23 @@ function convertEnergyFoo() {
       if (pollution>=100) {
         alert("You Lose!");
         clearInterval(mainGameLoop);
-        energy = 0;
-        pollution = 0;
-        pollutionStart = false;
-        pollutionPHS=0.5;
+        var energy = 0;
+        var energyPerClick = 1;
+        var pollutionStart = false;
+        var pollution = 0;
+        var pollutionPHS=0.5;
+        var cp1=false;
+        var cp2=false;
+        var cp3=false;
         document.getElementById("energyConverted").innerHTML = energy;
         document.getElementById("pollutionEarned").innerHTML = pollution;
+        convertEnergyFoo();
+        upgrade();
+        lessenEnergy1();
+        lessenEnergy2();
+        lessenEnergy3();
       }
-      if (energy == 1000) {
+      if (energy >= 1000) {
         document.getElementById("win").style.visibility = "visible";
         document.getElementById("win").onclick = winGame;
       }
@@ -52,15 +60,18 @@ function convertEnergyFoo() {
 
 function winGame() {
   alert("You Win!");
-  energy = 0;
-  pollution = 0;
-  pollutionStart = false;
-  pollutionPHS=0.5;
-  winCount=winCount+1;
+  var energy = 0;
+  var energyPerClick = 1;
+  var pollutionStart = false;
+  var pollution = 0;
+  var pollutionPHS=0.5;
+  var cp1=false;
+  var cp2=false;
+  var cp3=false;
   document.getElementById("energyConverted").innerHTML = energy;
   document.getElementById("pollutionEarned").innerHTML = pollution;
-  document.getElementById("wincounter").innerHTML = winCount;
   document.getElementById("win").style.visibility = "hidden";
+  document.getElementById("wincounter").innerHTML = winCount;
 }
 
 window.addEventListener('keydown', onKeyDownTwo, true);
