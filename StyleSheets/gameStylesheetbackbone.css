@@ -109,20 +109,25 @@
 
 #cp3{
   position: relative;
-  right: -200px;
+  left: 200px;
 }
 
 #cp2{
   position: relative;
-  right: -130px;
+  left: 130px;
 }
 
 #cp1{
   position: relative;
-  right: -70px;
+  left: 70px;
 }
 
 #up{
   position: relative;
-  right: -193px;
+  left: 193px;
+}
+
+#helpMeOut {
+  position: relative;
+  left: 340px;
 }
