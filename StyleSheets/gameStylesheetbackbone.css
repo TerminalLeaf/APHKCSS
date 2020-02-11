@@ -81,3 +81,48 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.cp {
+  float: right;
+  position: relative;
+  box-sizing: content-box;
+  width: 125px;
+  height: 60px;
+  border: 1px dotted black;
+  background-color: orange;
+  text-align: center;
+  right: 10px;
+  color: darkblue;
+}
+
+#updownup{
+  left: 250px;
+}
+
+#campaign{
+  right: 5px;
+}
+
+#airFilters{
+  left: 120px;
+}
+
+#cp3{
+  position: relative;
+  right: -200px;
+}
+
+#cp2{
+  position: relative;
+  right: -130px;
+}
+
+#cp1{
+  position: relative;
+  right: -70px;
+}
+
+#up{
+  position: relative;
+  right: -193px;
+}

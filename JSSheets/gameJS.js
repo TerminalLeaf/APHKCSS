@@ -3,11 +3,15 @@ var energyPerClick = 1;
 var pollutionStart = false;
 var pollution = 0;
 var roundedOffPollution = Math.round(pollution);
-var pollutionPerSec = 0.33333333333333333333333333;
+var pollutionPerSec = 1;
 var cp1=false;
 var cp2=false;
 var cp3=false;
 var mainGameLoop;
+var cp1bought = 0;
+var cp2bought = 0;
+var cp3bought = 0;
+var upbought = 0;
 
 //init
 document.getElementById("energyConverted").innerHTML = energy;
@@ -18,6 +22,9 @@ document.getElementById("cp1").onclick = lessenEnergy1;
 document.getElementById("cp2").onclick = lessenEnergy2;
 document.getElementById("cp3").onclick = lessenEnergy3;
 document.getElementById("up").onclick = upgrade;
+document.getElementById("upNum").innerHTML = upbought;
+document.getElementById("aFNum").innerHTML = cp2bought;
+document.getElementById("campaignsNum").innerHTML = cp1bought;
 
 window.onload = startLoop();
 
@@ -58,11 +65,14 @@ function foo([pollution, pollutionPerSec, pollutionStart, roundedOffPollution]) 
       pollutionStart = false;
       pollution = 0;
       roundedOffPollution = Math.round(pollution);
-      pollutionPerSec = 0.33333333333333333333333333;
+      pollutionPerSec = 1;
       cp1=false;
       cp2=false;
       cp3=false;
-      clearInterval(mainGameLoop);
+      cp1bought = 0;
+      cp2bought = 0;
+      cp3bought = 0;
+      upbought = 0;
       document.getElementById("energyConverted").innerHTML = energy;
       document.getElementById("pollutionEarned").innerHTML = roundedOffPollution;
     }
@@ -85,14 +95,17 @@ function winGame() {
   pollutionStart = false;
   pollution = 0;
   roundedOffPollution = Math.round(pollution);
-  pollutionPerSec = 0.33333333333333333333333333;
+  pollutionPerSec = 1;
   cp1=false;
   cp2=false;
   cp3=false;
+  cp1bought = 0;
+  cp2bought = 0;
+  cp3bought = 0;
+  upbought = 0;
   document.getElementById("energyConverted").innerHTML = energy;
   document.getElementById("pollutionEarned").innerHTML = roundedOffPollution;
   document.getElementById("win").style.visibility = "hidden";
-  clearInterval(mainGameLoop);
 }
 
 window.addEventListener('keydown', onKeyDownTwo, true);
@@ -124,6 +137,8 @@ function lessenEnergy1() {
     document.getElementById("cp1").style.backgroundColor = "#00FF00";
     pollutionPerSec=((pollutionPerSec*2)*0.7)/2;
     document.getElementById("pollutionEarned").innerHTML = roundedOffPollution;
+    cp1bought=cp1bought+1;
+    document.getElementById("campaignsNum").innerHTML = cp1bought;
   } else {
     document.getElementById("cp1").style.backgroundColor = "#FF0000";
     setTimeout(function(){document.getElementById("cp1").style.backgroundColor = "#00008B";}, 100);
@@ -138,6 +153,8 @@ function lessenEnergy2() {
     document.getElementById("cp2").style.backgroundColor = "#00FF00";
     pollutionPerSec=((pollutionPerSec*2)*0.5)/2;
     document.getElementById("pollutionEarned").innerHTML = roundedOffPollution;
+    cp2bought=cp2bought+1;
+    document.getElementById("aFNum").innerHTML = cp2bought;
   } else {
     document.getElementById("cp2").style.backgroundColor = "#FF0000";
     setTimeout(function(){document.getElementById("cp2").style.backgroundColor = "#00008B";}, 100);
@@ -167,6 +184,8 @@ function upgrade() {
     document.getElementById("up").style.backgroundColor = "#00FF00";
     energyPerClick=energyPerClick+1;
     document.getElementById("pollutionEarned").innerHTML = roundedOffPollution;
+    upbought=upbought+1;
+    document.getElementById("upNum").innerHTML = upbought;
   } else {
     document.getElementById("up").style.backgroundColor = "#FF0000";
     setTimeout(function(){document.getElementById("up").style.backgroundColor = "#00008B";}, 100);
