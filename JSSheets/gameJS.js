@@ -18,6 +18,7 @@ document.getElementById("cp1").onclick = lessenEnergy1;
 document.getElementById("cp2").onclick = lessenEnergy2;
 document.getElementById("cp3").onclick = lessenEnergy3;
 document.getElementById("up").onclick = upgrade;
+
 window.onload = startLoop();
 
 function convertEnergyFoo() {
@@ -25,23 +26,26 @@ function convertEnergyFoo() {
   document.getElementById("energyConverted").innerHTML = energy;
   document.getElementById("hire").style.backgroundColor = "#00FF00";
   setTimeout(function(){document.getElementById("hire").style.backgroundColor = "#00008B";}, 100);
+  if (energy >= 50) {
+    pollutionStart = true;
+  }
 }
 
 function startLoop() {
   //var mainGameLoop=setInterval(foo, 1000, [pollution, pollutionPerSec, pollutionStart]);
   //var mainGameLoop=setInterval(foo.bind(null, [pollution, pollutionPerSec, pollutionStart]), 1000);
-  if (energy >= 50) {
-    pollutionStart = true;
-  }
-  mainGameLoop=setInterval(function foo2() {[pollution, pollutionPerSec, pollutionStart, roundedOffPollution, mainGameLoop] =
-    foo([pollution, pollutionPerSec, pollutionStart, roundedOffPollution, mainGameLoop]);}, 1000);
+
+  mainGameLoop=setInterval(function foo2() {
+    [pollution, pollutionPerSec, pollutionStart, roundedOffPollution] =
+    foo([pollution, pollutionPerSec, pollutionStart, roundedOffPollution]);
+  }, 1000);
+
 }
 
-function foo([pollution, pollutionPerSec, pollutionStart, roundedOffPollution, mainGameLoop]) {
-  console.log(pollutionStart);
+function foo([pollution, pollutionPerSec, pollutionStart, roundedOffPollution]) {
+
   if (pollutionStart == true) {
     pollution = pollution + pollutionPerSec;
-    console.log("pollution is: " + pollution);
 
     roundedOffPollution = Math.round(pollution);
     document.getElementById("pollutionEarned").innerHTML = roundedOffPollution;
@@ -68,10 +72,8 @@ function foo([pollution, pollutionPerSec, pollutionStart, roundedOffPollution, m
       document.getElementById("win").style.visibility = "visible";
       document.getElementById("win").onclick = winGame;
     }
-
-    return [pollution, pollutionPerSec, pollutionStart,roundedOffPollution, mainGameLoop]
-
   }
+  return [pollution, pollutionPerSec, pollutionStart,roundedOffPollution];
 }
 
 
