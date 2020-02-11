@@ -1,12 +1,12 @@
 var energy = 0;
 var energyPerClick = 1;
 var pollutionStart = false;
-var pollution = 1;
+var pollution = 0;
 var pollutionPerSec = 1;
 var cp1=false;
 var cp2=false;
 var cp3=false;
-var mainGameLoop;
+var array = [0, 1, true]
 
 //init
 document.getElementById("energyConverted").innerHTML = energy;
@@ -18,7 +18,7 @@ document.getElementById("cp2").onclick = lessenEnergy2;
 document.getElementById("cp3").onclick = lessenEnergy3;
 document.getElementById("up").onclick = upgrade;
 
-//this allows the person to gain energy whenever they click the "hire" button, but when the person reaches 50 energy, pollution starts increasing. Also, when 100 pollution is reached, they lose the game. The game is won when they have 1000 energy.
+
 function convertEnergyFoo() {
   energy = energy+energyPerClick;
   document.getElementById("energyConverted").innerHTML = energy;
@@ -31,44 +31,49 @@ function convertEnergyFoo() {
 }
 
 function startLoop() {
-  mainGameLoop=setInterval(
-    function foo(pollution) {
-      console.log(poll1ution);
+  //var mainGameLoop=setInterval(foo, 1000, [pollution, pollutionPerSec, pollutionStart]);
+  //var mainGameLoop=setInterval(foo.bind(null, [pollution, pollutionPerSec, pollutionStart]), 1000);
+  var mainGameLoop2=setInterval(function foo2() {[pollution, pollutionPerSec, pollutionStart] =
+    foo([pollution, pollutionPerSec, pollutionStart]);}, 1000);
 
-      if (pollutionStart = true) {
-        pollution = pollution + pollutionPerSec;
-        document.getElementById("pollutionEarned").innerHTML = pollution;
-        
-        //lose
-        if (pollution >= 100) {
-          alert("You Lose!");
-          clearInterval(mainGameLoop);
-          var energy = 0;
-          var energyPerClick = 1;
-          var pollutionStart = false;
-          var pollution = 0;
-          var pollutionPerSec=1;
-          var cp1=false;
-          var cp2=false;
-          var cp3=false;
-          document.getElementById("energyConverted").innerHTML = energy;
-          document.getElementById("pollutionEarned").innerHTML = pollution;
-          convertEnergyFoo();
-          upgrade();
-          lessenEnergy1();
-          lessenEnergy2();
-          lessenEnergy3();
-        }
-
-        //win
-        if (energy >= 1000) {
-          document.getElementById("win").style.visibility = "visible";
-          document.getElementById("win").onclick = winGame;
-        }
-      }
-    }
-    , 1000);
 }
+
+function foo([pollution, pollutionPerSec, pollutionStart]) {
+  if (pollutionStart = true) {
+    pollution = pollution + pollutionPerSec;
+    document.getElementById("pollutionEarned").innerHTML = pollution;
+
+    //lose
+    if (pollution >= 100) {
+      alert("You Lose!");
+      clearInterval(mainGameLoop);
+      var energy = 0;
+      var energyPerClick = 1;
+      var pollutionStart = false;
+      var pollution = 0;
+      var pollutionPerSec=1;
+      var cp1=false;
+      var cp2=false;
+      var cp3=false;
+      document.getElementById("energyConverted").innerHTML = energy;
+      document.getElementById("pollutionEarned").innerHTML = pollution;
+      convertEnergyFoo();
+      upgrade();
+      lessenEnergy1();
+      lessenEnergy2();
+      lessenEnergy3();
+    }
+
+    //win
+    if (energy >= 1000) {
+      document.getElementById("win").style.visibility = "visible";
+      document.getElementById("win").onclick = winGame;
+    }
+
+    return [pollution, pollutionPerSec, pollutionStart]
+  }
+}
+
 
 //win
 function winGame() {
