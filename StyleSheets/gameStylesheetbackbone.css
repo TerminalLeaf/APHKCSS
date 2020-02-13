@@ -135,3 +135,8 @@ body {
   position: relative;
   left: 340px;
 }
+
+#win {
+  position: relative;
+  left: 75px;
+}

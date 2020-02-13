@@ -3,7 +3,7 @@ var energyPerClick = 1;
 var pollutionStart = false;
 var pollution = 0;
 var roundedOffPollution = Math.round(pollution);
-var pollutionPerSec = 1;
+var pollutionPerSec = 10;
 var cp1=false;
 var cp2=false;
 var cp3=false;
@@ -69,7 +69,7 @@ function foo([pollution, pollutionPerSec, pollutionStart, roundedOffPollution]) 
       pollutionStart = false;
       pollution = 0;
       roundedOffPollution = Math.round(pollution);
-      pollutionPerSec = 1;
+      pollutionPerSec = 10;
       cp1=false;
       cp2=false;
       cp3=false;
@@ -102,7 +102,7 @@ function winGame() {
   pollutionStart = false;
   pollution = 0;
   roundedOffPollution = Math.round(pollution);
-  pollutionPerSec = 1;
+  pollutionPerSec = 10;
   cp1=false;
   cp2=false;
   cp3=false;
