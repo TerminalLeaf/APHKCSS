@@ -50,7 +50,7 @@ body {
 #API {
   box-sizing: content-box;
   width: 215px;
-  height: 700px;
+  height: 825px;
   top: 15px;
   padding: 30px;
   border: 7px solid black;
@@ -68,6 +68,7 @@ body {
   position: relative;
   float:left;
   left: 40px;
+  top: 100px;
   background-color: lightgreen;
 }
 
@@ -80,6 +81,7 @@ body {
   position: relative;
   float: right;
   right: 40px;
+  top: 100px;
   background-color: lightgreen;
 }
 
@@ -92,6 +94,7 @@ body {
   position: relative;
   float:left;
   left: 40px;
+  top: 100px;
   background-color: lightgreen;
 }
 
@@ -104,6 +107,7 @@ body {
   position: relative;
   float: right;
   right: 40px;
+  top: 100px;
   background-color: lightgreen;
 }
 
@@ -111,7 +115,7 @@ body {
   box-sizing: content-box;
   width: 1025px;
   height: 53.6px;
-  top: 10px;
+  top: 110px;
   padding: 30px;
   border: 7px solid black;
   position: relative;
@@ -127,4 +131,37 @@ body {
   float: right;
   padding: 10px;
   top: -10px;
+}
+
+#coolButton1 {
+  position: absolute;
+  right: 15px;
+  top: 240px;
+  z-index: 1;
+}
+
+#coolButton2 {
+  box-sizing: content-box;
+  position: absolute;
+  right: 15px;
+  top: 240px;
+  z-index: 1;
+}
+
+.links {
+  text-decoration: none;
+  font-weight: 800;
+}
+
+#header {
+  position: relative;
+  font-weight: 800;
+  font-size: 24px;
+  z-index: 5;
+  left: 430px;
+  top: 70px;
+  box-sizing: content-box;
+  padding: 30px;
+  border: 7px solid black;
+  background-color: lightgreen;
 }
