@@ -90,7 +90,7 @@ body {
 #tableOfContentsSwitching {
   position: relative;
   top: 600px;
-  left: 600px
+  left: 400px;
 }
 
 .smallIMG {
@@ -102,4 +102,13 @@ body {
   position: relative;
   border-top: 5px solid darkred;
   top: -1px;
+  cursor: pointer;
+}
+
+#smallgmeIMG {
+  cursor: pointer;
+}
+
+#smallsolIMG {
+  cursor: pointer;
 }

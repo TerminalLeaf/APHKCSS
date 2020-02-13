@@ -37,7 +37,32 @@ document.addEventListener('DOMContentLoaded', (event)=> {setInterval(function fo
     }
   }, 3000);});
 
+function linkOnclickIndex() {
+  document.getElementById("smallsolIMG").style.top = "0px";
+  document.getElementById("smallsolIMG").style.borderTop = "none";
+  document.getElementById("smallgmeIMG").style.top = "0px";
+  document.getElementById("smallgmeIMG").style.borderTop = "none";
+  document.getElementById("smallintIMG").style = "position: relative;border-top: 5px solid darkred;top: -1px;"
+  document.getElementById("img").src = "Images/IntroIMG.png";
+  document.getElementById("urlForPage").href = "index.html";
+}
 
-/*position: relative;
-border-top: 5px solid darkred;
-top: -1px;*/
+function linkOnclickGame() {
+  document.getElementById("smallsolIMG").style.top = "0px";
+  document.getElementById("smallsolIMG").style.borderTop = "none";
+  document.getElementById("smallintIMG").style.top = "0px";
+  document.getElementById("smallintIMG").style.borderTop = "none";
+  document.getElementById("smallgmeIMG").style = "position: relative;border-top: 5px solid darkred;top: -1px;"
+  document.getElementById("img").src = "Images/GameIMG.png";
+  document.getElementById("urlForPage").href = "gamePage.html";
+}
+
+function linkOnclickSol() {
+  document.getElementById("smallgmeIMG").style.top = "0px";
+  document.getElementById("smallgmeIMG").style.borderTop = "none";
+  document.getElementById("smallintIMG").style.top = "0px";
+  document.getElementById("smallintIMG").style.borderTop = "none";
+  document.getElementById("smallsolIMG").style = "position: relative;border-top: 5px solid darkred;top: -1px;"
+  document.getElementById("img").src = "Images/SolIMG.png";
+  document.getElementById("urlForPage").href = "solutionsPage.html";
+}
