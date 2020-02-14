@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', (event)=> {setInterval(function fo
         document.getElementById("smallintIMG").style = "position: relative;border-top: 5px solid darkred;top: -1px;"
         document.getElementById("img").src = "Images/IntroIMG.png";
         document.getElementById("urlForPage").href = "index.html";
-        imgCounter=1;
-      }, 3000);
+        imgCounter=2;
+      }, 1000);
     } else if (imgCounter == 2){
       setTimeout(function foo(){
         document.getElementById("smallsolIMG").style.top = "0px";
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', (event)=> {setInterval(function fo
         document.getElementById("smallgmeIMG").style = "position: relative;border-top: 5px solid darkred;top: -1px;"
         document.getElementById("img").src = "Images/GameIMG.png";
         document.getElementById("urlForPage").href = "gamePage.html";
-        imgCounter=2;
-      }, 3000);
+        imgCounter=3;
+      }, 1000);
     } else if (imgCounter == 3){
       setTimeout(function foo(){
         document.getElementById("smallgmeIMG").style.top = "0px";
@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', (event)=> {setInterval(function fo
         document.getElementById("img").src = "Images/SolIMG.png";
         document.getElementById("urlForPage").href = "solutionsPage.html";
         imgCounter=1;
-      }, 3000);
+      }, 1000);
     }
-  }, 3000);});
+  }, 1000);});
 
 function linkOnclickIndex() {
   document.getElementById("smallsolIMG").style.top = "0px";
