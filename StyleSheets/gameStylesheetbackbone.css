@@ -100,40 +100,59 @@ body {
 }
 
 #updownup{
-  left: 250px;
+  position: absolute;
+  left: 885px;
+  width: 155px;
 }
 
 #campaign{
-  right: 5px;
+  position: absolute;
+  left: 885px;
+  width: 155px;
 }
 
 #airFilters{
-  left: 120px;
+  position: absolute;
+  left: 885px;
+  width: 155px;
 }
 
 #cp3{
   position: relative;
-  left: 200px;
+  width: 610px;
 }
 
 #cp2{
   position: relative;
-  left: 130px;
+  width: 610px;
 }
 
 #cp1{
   position: relative;
-  left: 70px;
+  width: 610px;
 }
 
 #up{
   position: relative;
-  left: 193px;
+  width: 610px;
+}
+
+#hire {
+  position: relative;
+  width: 610px;
 }
 
 #helpMeOut {
-  position: relative;
-  left: 340px;
+  position: absolute;
+  left: 885px;
+  background-color: #E7717D;
+  font-weight: 800;
+  width: 155px;
+}
+
+img {
+  height: auto;
+  width: auto;
 }
 
 #win {
@@ -144,4 +163,10 @@ body {
 .links {
   text-decoration: none;
   font-weight: 800;
+}
+
+.wrapper {
+  position: absolute;
+  height: 700px;
+  width: 1325px;
 }

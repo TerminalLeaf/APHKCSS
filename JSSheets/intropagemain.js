@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', (event)=> {setInterval(function fo
         document.getElementById("smallintIMG").style = "position: relative;border-top: 5px solid darkred;top: -1px;"
         document.getElementById("img").src = "Images/IntroIMG.png";
         document.getElementById("urlForPage").href = "index.html";
-        imgCounter=2;
+        imgCounter=imgCounter+1;
       }, 1000);
     } else if (imgCounter == 2){
       setTimeout(function foo(){
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', (event)=> {setInterval(function fo
         document.getElementById("smallgmeIMG").style = "position: relative;border-top: 5px solid darkred;top: -1px;"
         document.getElementById("img").src = "Images/GameIMG.png";
         document.getElementById("urlForPage").href = "gamePage.html";
-        imgCounter=3;
+        imgCounter=imgCounter+1;
       }, 1000);
     } else if (imgCounter == 3){
       setTimeout(function foo(){

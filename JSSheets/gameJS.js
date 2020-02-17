@@ -209,7 +209,7 @@ function upgrade() {
 
 //lol a help function just in case you get confused
 function helpLol() {
-  setTimeout(function(){document.getElementById("helpMeOut").style.backgroundColor = "#00008B";}, 100);
+  setTimeout(function(){document.getElementById("helpMeOut").style.backgroundColor = "#E7717D";}, 100);
   document.getElementById("helpMeOut").style.backgroundColor = "#00FF00";
   setTimeout(function(){alert("First, the aim of the game is to get 10,000 energy so that we, the player, have enough energy to power our rocket ship to migrate to a new planet. In order to earn energy, we need to hire non-renewable energy factories to convert these non-renewable energy sources into energy! Try clicking it a few times. Go ahead. I'll wait...");}, 100);
   setTimeout(function(){alert("I'm too impatient to wait any further. Done? OK, Good. So now, there is a lose condition. When you reach 50 energy, the pollution levels will start rising. Once the number below the energy reaches 100, then we, as the player, lose! Anyways, to reduce this rise, we need to press the 'Buy Campaigns For Air Pollution' button, the 'Buy Air Filters' button, and the 'Replace Non-Renewable Energy Sources with Renewable Energy Sources' button. Be careful though, as these cost energy. Good Luck! Oh, wait a few seconds for two more tips!");}, 5000);

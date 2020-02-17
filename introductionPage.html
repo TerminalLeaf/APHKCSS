@@ -6,35 +6,37 @@
     <link rel="shortcut icon" href="Images/favicon.ico" />
   </head>
   <body>
-    <div class="dropdown">
-      <button class="dropbtn">Menu</button>
-      <div class="dropdown-content">
-        <a href="index.html">Home Page</a>
-        <a href="introductionPage.html">Introduction</a>
-        <a href="solutionsPage.html">Solutions</a>
-        <a href="gamePage.html">Game</a>
+    <div id="wrapper">
+      <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          <a href="index.html">Home Page</a>
+          <a href="introductionPage.html">Introduction</a>
+          <a href="solutionsPage.html">Solutions</a>
+          <a href="gamePage.html">Game</a>
+        </div>
       </div>
-    </div>
-    <a href="index.html">
-      <img src="Images/favicon.ico" id="logoIMG"></img>
-    </a>
-    <a href="Images/anotherimage.jpg"><img id="API" src="Images/anotherimage.jpg"></img></a>
-    <b id="header">Here's a snippet of every page!</b>
-    <div id="tableOfContents">
-      <a id="urlForPage" href="index.html"><img class="imgs" id="img" src="Images/IntroIMG.png"/></a>
-    </div>
-    <div id="tableOfContentsSwitching">
-      <a onclick="linkOnclickIndex()">
-        <img class="smallIMG" id="smallintIMG" src="Images/IntroIMG.png"></img>
+      <a href="index.html">
+        <img src="Images/favicon.ico" id="logoIMG"></img>
       </a>
-      <a onclick="linkOnclickGame()">
-        <img class="smallIMG" id="smallgmeIMG" src="Images/GameIMG.png"></img>
-      </a>
-      <a onclick="linkOnclickSol()">
-        <img class="smallIMG" id="smallsolIMG" src="Images/SolIMG.png"></img>
-      </a>
+      <a href="Images/anotherimage.jpg"><img id="API" src="Images/anotherimage.jpg"></img></a>
+      <b id="header">Here's a snippet of every page!</b>
+      <div id="tableOfContents">
+        <a id="urlForPage" href="index.html"><img class="imgs" id="img" src="Images/IntroIMG.png"/></a>
+      </div>
+      <div id="tableOfContentsSwitching">
+        <a onclick="linkOnclickIndex()">
+          <img class="smallIMG" id="smallintIMG" src="Images/IntroIMG.png"></img>
+        </a>
+        <a onclick="linkOnclickGame()">
+          <img class="smallIMG" id="smallgmeIMG" src="Images/GameIMG.png"></img>
+        </a>
+        <a onclick="linkOnclickSol()">
+          <img class="smallIMG" id="smallsolIMG" src="Images/SolIMG.png"></img>
+        </a>
+      </div>
+      <link href="StyleSheets/introstylesheetbackbone.css" rel="stylesheet">
+      <script type="text/javascript" src="JSSheets/intropagemain.js"></script>
     </div>
-    <link href="StyleSheets/introstylesheetbackbone.css" rel="stylesheet">
-    <script type="text/javascript" src="JSSheets/intropagemain.js"></script>
   </body>
 </html>

@@ -133,3 +133,7 @@ body {
   border: 7px solid black;
   background-color: lightgreen;
 }
+
+.wrapper {
+    width: 1325px;
+}
